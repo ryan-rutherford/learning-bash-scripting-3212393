@@ -7,8 +7,10 @@ Solutions
 dir1
 dir2
 dir3
+error.txt
 list.txt
 lorem.txt
+output.txt
 CONTRIBUTING.md
 LICENSE
 NOTICE
@@ -18,5 +20,7 @@ Solutions
 dir1
 dir2
 dir3
+error.txt
 list.txt
 lorem.txt
+output.txt

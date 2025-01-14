@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+myvar="Hello!"
+echo "The value of the myvar variable is: $myvar"
+myvar="Bonjour!"
+echo "The value of the myvar variable is: $myvar"
+
+declare -r myname="Scott"
+echo "The value of the myname variable is: $myname"
+myname="Michael"
+echo "The value of the myname variable is: $myname"
+
+declare -l lowerstring="This is some TEXT!"
+echo "The value of the lowerstring variable is: $lowerstring"
+lowerstring="Let's CHANGE the VALUE!"
+echo "The value of the lowerstring variable is: $lowerstring"
+
+declare -u upperstring="This is some TEXT!"
+echo "The value of the upperstring variable is: $upperstring"
+upperstring="Let's CHANGE the VALUE!"
+echo "The value of the upperstring variable is: $upperstring"
+
+echo -e "\033[33;44mColor Text\033[0m"
+echo -e "\033[30;42mColor Text\033[0m"
+echo -e "\033[41;105mColor Text"
+echo "some text that shouldn't have styling"
+echo -e "\033[0m"
+echo "some text that shouldn't have styling"
+echo -e "\033[4;31;40mERROR:\033[0m\033[31;40m Something went wrong.\033[0m"
+
+ulinered="\033[4;31;40m"
+red="\033[31;40m"
+none="\033[0m"
+
+echo -e $ulinered"ERROR:"$none$red" Something went wrong."$none
+
+echo "----10----| --5--"
+
+echo "Right-aligned text and digits"
+printf "%10s: %5d\n" "A Label" 123 "B Label" 456
+
+echo "Left-aligned text, right-aligned digits"
+printf "%-10s: %5d\n" "A Label" 123 "B Label" 456
+
+echo "Left-aligned text and digits"
+printf "%-10s: %-5d\n" "A Label" 123 "B Label" 456
+
+echo "Left-aligned text, right-aligned and padded digits"
+printf "%-10s: %05d\n" "A Label" 123 "B Label" 456
+
+echo "----10----| --5--"
+
+printf "%(%Y-%m-%d %H:%M:%S)T\n" 1658179558
+date +%s
+date +%Y-%m-%d\ %H:%M:%S
+printf "%(%Y-%m-%d %H:%M:%S)T\n" $(date +%s)
+printf "%(%Y-%m-%d %H:%M:%S)T\n"
+printf "%(%Y-%m-%d %H:%M:%S)T is %s\n" -1 "the time"
+
+declare -a snacks=("apple" "banana" "orange")
+echo ${snacks[2]}
+snacks[5]="grapes"
+snacks+=("mango")
+echo ${snacks[@]}
+for i in {0..6}; do echo "$i: ${snacks[$i]}"; done
+declare -A office
+office[city]="San Francisco"
+office["building name"]="HQ West"
+echo ${office["building name"]} is in ${office[city]}"
