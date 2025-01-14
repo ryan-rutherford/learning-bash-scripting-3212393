@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+greet() {
+  echo "Hi there, $1! What a nice $2!"
+}
+
+echo "And now, a greeting!"
+greet Ryan Morning
+greet Everybody Evening
+
+numberthings() {
+    i=1
+    for f in "$@"; do
+        echo $i: "$f"
+        ((i++))
+    done
+    echo "This counting was brought to you by the function $FUNCNAME!"
+}
+
+numberthings /* #"$(ls /)"
+echo
+numberthings pine birch maple spruce
+
+
+var1="I'm variable 1"
+
+myfunction() {
+    var2="I'm variable 2"
+    local var3="I'm variable 3"
+}
+myfunction
+
+echo $var1
+echo $var2
+echo $var3

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Writing to output file
+for i in 1 2 3 4 5
+do
+    echo "This is line $i" > textfile.txt
+done
+
+#Overwriting to existing file
+
+for i in 1 2 3 4 5
+do
+    echo "This is line $i" >> textfile.txt
+done
+
+#Reading from input file
+
+while read f
+    do echo "I read a line and it says: $f"
+done < textfile.txt
