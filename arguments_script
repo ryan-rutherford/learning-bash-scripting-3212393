@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+echo "The $0 script got the argument $1"
+
+#!/usr/bin/env bash
+
+echo "The $0 script got the argument $1"
+echo "Argument 2 is $2"
+
+#!/usr/bin/env bash
+
+for i in $@
+do
+    echo $i
+done
+
+#!/usr/bin/env bash
+
+for i in $@
+do
+    echo $i
+done
+
+echo "There were $# arguments."
